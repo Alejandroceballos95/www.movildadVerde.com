@@ -83,8 +83,8 @@ section p {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background-color: #f0f8ff; /* Fondo claro y atractivo */
-    border: 2px solid #0073b1; /* Borde para destacar */
+    background-color: #f0f8ff; 
+    border: 2px solid #0073b1; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -103,8 +103,7 @@ section p {
 }
 
 .datosComparativos p strong {
-    color: #0073b1; /* Resaltar textos importantes */
-}
+    color: #0073b1; 
 
 
 aside {
