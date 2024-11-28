@@ -1,4 +1,5 @@
-/* estilos generales */
+/* ===== Estilos generales ===== */
+/* Reinicio de márgenes, padding y box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -6,139 +7,198 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* barra de navegación */
+/* ===== Barra de navegación ===== */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox para alinear elementos horizontalmente */
+    justify-content: space-between; /* Espaciado entre elementos */
+    align-items: center; /* Centrar verticalmente */
     padding: 10px 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #ccc;
-    position: sticky;
+    background-color: #ffffff; /* Fondo blanco */
+    border-bottom: 1px solid #ccc; /* Línea inferior */
+    position: sticky; /* Barra fija al hacer scroll */
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Aparece sobre otros elementos */
 }
 
-/* logo de la barra de navegación */
+/* Logo en la barra de navegación */
 .logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
 }
 
-/* enlaces de navegacion */
+/* Enlaces del menú de navegación */
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 50px;
+    list-style: none; /* Eliminar viñetas */
+    display: flex; /* Mostrar enlaces en fila */
+    gap: 50px; /* Espaciado entre enlaces */
 }
 
 nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color predeterminado */
+    font-size: 16px; /* Tamaño del texto */
 }
 
 nav a:hover {
-    color: #0073b1
+    color: #0073b1; /* Cambiar color al pasar el mouse */
 }
 
-/* boton de llamada a la acción CTA */
+/* Botón de llamada a la acción (CTA) */
 .nav-cta .cta-button {
     padding: 8px 15px;
-    background-color: #0073b1;
-    color: #fff;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    background-color: #0073b1; /* Color principal */
+    color: #fff; /* Texto blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s; /* Transición suave */
     font-size: 16px;
 }
 
 .nav-cta .cta-button:hover {
-    background-color: #005582;
+    background-color: #005582; /* Color más oscuro al pasar el mouse */
 }
 
-section {
+/* ===== Hero Section (Sección principal) ===== */
+.hero {
+    width: 100%; /* Ocupar el 100% del ancho */
+    height: 100vh; /* Ocupar toda la altura de la ventana */
+    background: url('./heroSection.webp') no-repeat center center/cover; /* Imagen de fondo ajustada */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Texto blanco */
     padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo para el título principal en el hero */
+.hero h1 {
+    font-size: 3rem; /* Tamaño del texto grande */
+    margin-bottom: 20px;
+}
+
+/* Estilo para el párrafo en el hero */
+.hero p {
+    font-size: 1.5rem; /* Tamaño del texto moderado */
+    margin-bottom: 20px;
+}
+
+/* Botones en la sección hero */
+.hero-buttons .cta-button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #0073b1; /* Fondo principal */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s; /* Transición suave */
+}
+
+.hero-buttons .cta-button:hover {
+    background-color: #005582; /* Fondo más oscuro */
+}
+
+.hero-buttons .cta-button.secondary {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde blanco */
+}
+
+.hero-buttons .cta-button.secondary:hover {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: #0073b1; /* Texto azul */
+}
+
+/* ===== Secciones generales ===== */
+section {
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo de los encabezados en las secciones */
 section h2 {
-    color: #0073b1;
+    color: #0073b1; /* Color azul */
     margin-bottom: 10px;
     font-size: 24px;
 }
 
+/* Estilo de los párrafos en las secciones */
 section p {
     font-size: 16px;
-    text-align: justify;
+    text-align: justify; /* Alinear texto a ambos lados */
 }
 
+/* ===== Sección de datos comparativos ===== */
 .datosComparativos {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: #f0f8ff; 
-    border: 2px solid #0073b1; 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f8ff; /* Fondo azul claro */
+    border: 2px solid #0073b1; /* Borde azul */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Centrar texto */
 }
 
+/* Encabezado de la sección de datos comparativos */
 .datosComparativos h2 {
     color: #0073b1;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
+/* Párrafos en la sección de datos comparativos */
 .datosComparativos p {
     font-size: 16px;
-    text-align: justify;
-    color: #333333;
+    text-align: justify; /* Texto justificado */
+    color: #333333; /* Texto oscuro */
 }
 
+/* Resaltar palabras clave en párrafos */
 .datosComparativos p strong {
-    color: #0073b1; 
+    color: #0073b1; /* Color azul */
 }
 
+/* ===== Sección aside ===== */
 aside {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 15px;
-    background-color: #0073b1;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupar todo el ancho */
+    padding: 20px;
+    background-color: #0073b1; /* Fondo azul */
+    color: white; /* Texto blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Texto centrado */
 }
 
+/* Títulos en la sección aside */
 aside h3 {
     margin-bottom: 10px;
     font-size: 20px;
 }
 
+/* Párrafos en la sección aside */
 aside p {
     font-size: 16px;
-    font-style: italic;
-    text-align: center;
+    font-style: italic; /* Texto en cursiva */
 }
 
+/* ===== Footer ===== */
 footer {
-    text-align: center;
+    width: 100%; /* Ocupar todo el ancho */
+    text-align: center; /* Texto centrado */
     padding: 10px 20px;
-    background-color: #0073b1;
-    color: white;
+    background-color: #0073b1; /* Fondo azul */
+    color: white; /* Texto blanco */
 }
 
+/* Enlaces dentro del footer */
 footer a {
-    color: white;
-    text-decoration: none;
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Subrayar al pasar el mouse */
 }
