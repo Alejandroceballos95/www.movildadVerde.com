@@ -7,7 +7,7 @@
     <title>Movilidad Verde</title>
 
     <!-- Enlace al archivo de estilos CSS -->
-    <link rel="stylesheet" href="./CSS/styleBlock.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
 <body>
     <!-- ===== Cabecera: Barra de navegación ===== -->
@@ -102,5 +102,6 @@
     <footer>
         <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
+    <script src="{{ url_for('static', filename='JS/control.js') }}"></script>
 </body>
 </html>

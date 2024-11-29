@@ -27,6 +27,12 @@ def electricos():
 def hibridos():
     return render_template('hibridos.html')
 
-#ruta para archivos estaticos
+#ruta para archivos estáticos (sirve CSS, JS, imágenes si se acceden directamente)
+@app.route('/static/<path:path>')
+def static_files(path):
+    return send_from_directory('static', path)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
