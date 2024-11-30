@@ -8,22 +8,22 @@ def home():
     return render_template('index.html')
 
 #ruta para datos comparativos
-@app.route('/')
+@app.route('/datoscomparativos')
 def datos_comparativos():
     return render_template('datoscomparativos.html')
 
 #ruta para e-fuel
-@app.route('/')
+@app.route('/e-fuel')
 def e_fuel():
     return render_template('e-fuel.html')
 
 #ruta para electricos
-@app.route('/')
+@app.route('/electricos')
 def electricos():
     return render_template('electricos.html')
 
 #ruta para hibridos
-@app.route('/')
+@app.route('/hibridos')
 def hibridos():
     return render_template('hibridos.html')
 
