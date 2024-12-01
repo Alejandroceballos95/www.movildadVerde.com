@@ -29,11 +29,13 @@
     </header>
     <main>
         <!-- Sección de introducción -->
-        <section id="intro-electricos" class="section">
-            <h1>Vehículos Eléctricos</h1>
-            <p>
-                Los vehículos eléctricos representan una solución clave para la movilidad sostenible. Funcionan mediante motores eléctricos alimentados por baterías recargables, ofreciendo una alternativa limpia y eficiente a los vehículos de combustión interna.
-            </p>
+        <section id="intro-electricos" class="hero">
+            <div class="hero-content">
+                <h1>Vehículos Eléctricos</h1>
+                <p>
+                    Los vehículos eléctricos son fundamentales para una movilidad sostenible, utilizando motores eléctricos alimentados por baterías recargables para ofrecer una alternativa limpia y eficiente a los vehículos de combustión interna.
+                </p>
+            </div>
         </section>
 
         <!-- Sección de beneficios -->
@@ -43,9 +45,19 @@
                 <li><strong>Cero emisiones:</strong> No producen gases contaminantes durante su funcionamiento.</li>
                 <li><strong>Ahorro en costos:</strong> Menores costos de operación y mantenimiento en comparación con vehículos tradicionales.</li>
                 <li><strong>Eficiencia energética:</strong> Los motores eléctricos son más eficientes que los de combustión interna.</li>
-                <li><strong>Silencio en la conducción:</strong> Reducen la contaminación acústica en las ciudades.</li>
+                <li><strong>Conducción silenciosa:</strong> Reducen la contaminación acústica en las ciudades.</li>
             </ul>
         </section>
+
+        <!-- Sección del gráfico -->
+        <section id="grafico-demanda-electricidad" class="section">
+            <h2>Cambio Interanual en la Demanda de Electricidad en Colombia (2019-2022)</h2>
+            <p>
+                El siguiente gráfico muestra las variaciones anuales en la demanda de electricidad en Colombia entre 2019 y 2022, reflejando factores como el crecimiento económico, cambios demográficos y políticas energéticas implementadas en el país.
+            </p>
+            <img class="grafico" src="{{ url_for('static', filename='images/cambio_demanda_electricidad_colombia.png') }}" alt="Gráfico de cambio en la demanda de electricidad en Colombia">
+        </section>
+        
 
         <!-- Sección de desafíos -->
         <section id="desafios-electricos" class="section">
@@ -66,12 +78,6 @@
             </p>
         </section>
     </main>
-    <article>
-
-    </article>
-    <aside>
-
-    </aside>
     <footer>
         <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
