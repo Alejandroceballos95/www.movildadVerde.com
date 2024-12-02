@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Metadatos básicos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario Comparativo</title>
+
+    <!-- Enlace al archivo CSS para estilos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
+
 <body>
+    <!-- Sección de encabezado del sitio -->
     <header class="navbar">
         <div class="logo">
+            <!-- Enlace a la página principal -->
             <a href="#">Movilidad Verde</a>
         </div>
         <nav>
+            <!-- Menú de navegación con enlaces a otras secciones del sitio -->
             <ul>
                 <li><a href="{{ url_for('home') }}">Inicio</a></li>
                 <li><a href="{{ url_for('electricos') }}">Electricos</a></li>
@@ -20,22 +28,25 @@
             </ul>
         </nav>
         <div class="nav-cta">
+            <!-- Botón de llamada a la acción para contacto -->
             <a href="#contacto" class="cta-button">Contacto</a>
         </div>
     </header>
 
+    <!-- Contenido principal del sitio -->
     <main>
+        <!-- Sección del formulario de comparación de vehículos -->
         <section>
             <h2>Formulario de Comparación de Vehículos</h2>
             <form id="compararFormulario">
-                <!-- Datos personales -->
+                <!-- Campos para datos personales -->
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
-                
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
-                <!-- Tipo de vehículos a comparar -->
+                <!-- Selección de tipos de vehículos a comparar -->
                 <label for="vehiculo1">Vehículo 1:</label>
                 <select id="vehiculo1" name="vehiculo1" required>
                     <option value="Electrico">Eléctrico</option>
@@ -52,27 +63,31 @@
                     <option value="E-fuel">E-fuel</option>
                 </select>
 
-                <!-- Kilometraje diario -->
+                <!-- Campo para kilometraje diario -->
                 <label for="kilometraje">Kilometraje diario (km):</label>
                 <input type="number" id="kilometraje" name="kilometraje" required>
 
-                <!-- Gasto en combustible -->
+                <!-- Campo para gasto mensual en combustible -->
                 <label for="gastoCombustible">Gasto mensual en combustible (COP):</label>
                 <input type="number" id="gastoCombustible" name="gastoCombustible" required>
 
+                <!-- Botón para enviar el formulario -->
                 <button type="submit" class="cta-button">Comparar</button>
             </form>
         </section>
 
+        <!-- Sección donde se mostrarán los resultados -->
         <section id="resultado" class="datosComparativos">
-            <!-- Resultados aparecerán aquí -->
+            <!-- Este espacio se actualizará dinámicamente con los datos comparativos -->
         </section>
     </main>
 
+    <!-- Pie de página del sitio -->
     <footer>
         <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Enlace al archivo JavaScript para control de interacción -->
     <script src="{{ url_for('static', filename='JS/control.js') }}"></script>
 </body>
 </html>
