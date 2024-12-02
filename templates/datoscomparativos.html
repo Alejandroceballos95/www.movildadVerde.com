@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Comparativos</title>
-    <!-- Enlace al archivo de estilos CSS -->
+    <title>Formulario Comparativo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
 <body>
-    <!-- Solo se plasmo la estructura semantica -->
     <header class="navbar">
         <div class="logo">
             <a href="#">Movilidad Verde</a>
         </div>
-
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Inicio</a></li>
@@ -22,24 +19,60 @@
                 <li><a href="{{ url_for('e_fuel') }}">E-fuel</a></li>
             </ul>
         </nav>
-
         <div class="nav-cta">
             <a href="#contacto" class="cta-button">Contacto</a>
         </div>
     </header>
+
     <main>
         <section>
+            <h2>Formulario de Comparación de Vehículos</h2>
+            <form id="compararFormulario">
+                <!-- Datos personales -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
+                <!-- Tipo de vehículos a comparar -->
+                <label for="vehiculo1">Vehículo 1:</label>
+                <select id="vehiculo1" name="vehiculo1" required>
+                    <option value="Electrico">Eléctrico</option>
+                    <option value="Hibrido">Híbrido</option>
+                    <option value="Combustion">Combustión</option>
+                    <option value="E-fuel">E-fuel</option>
+                </select>
+
+                <label for="vehiculo2">Vehículo 2:</label>
+                <select id="vehiculo2" name="vehiculo2" required>
+                    <option value="Electrico">Eléctrico</option>
+                    <option value="Hibrido">Híbrido</option>
+                    <option value="Combustion">Combustión</option>
+                    <option value="E-fuel">E-fuel</option>
+                </select>
+
+                <!-- Kilometraje diario -->
+                <label for="kilometraje">Kilometraje diario (km):</label>
+                <input type="number" id="kilometraje" name="kilometraje" required>
+
+                <!-- Gasto en combustible -->
+                <label for="gastoCombustible">Gasto mensual en combustible (COP):</label>
+                <input type="number" id="gastoCombustible" name="gastoCombustible" required>
+
+                <button type="submit" class="cta-button">Comparar</button>
+            </form>
+        </section>
+
+        <section id="resultado" class="datosComparativos">
+            <!-- Resultados aparecerán aquí -->
         </section>
     </main>
-    <article>
 
-    </article>
-    <aside>
-
-    </aside>
     <footer>
-        
+        <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="{{ url_for('static', filename='JS/control.js') }}"></script>
 </body>
 </html>
