@@ -210,6 +210,54 @@ footer a:hover {
     text-decoration: underline; /* Subrayar al pasar el mouse */
 }
 
+
+
+/* Estilo para E-fuel */
+/* Estilo para el contenedor de tarjetas */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Estilo para las tarjetas */
+.card {
+    background: linear-gradient(to right, #3ce824, #71f542);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Hover para las tarjetas */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /* Fondo semitransparente para el contenido de la hero */
 .hero-content {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
@@ -317,3 +365,4 @@ form button.cta-button {
 form button.cta-button:hover {
     background-color: #005582;
 }
+
