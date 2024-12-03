@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Metadatos básicos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Comparativos</title>
-    <!-- Enlace al archivo de estilos CSS -->
+    <title>Formulario Comparativo</title>
+
+    <!-- Enlace al archivo CSS para estilos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
+
 <body>
-    <!-- Solo se plasmo la estructura semantica -->
+    <!-- Sección de encabezado del sitio -->
     <header class="navbar">
         <div class="logo">
+            <!-- Enlace a la página principal -->
             <a href="#">Movilidad Verde</a>
         </div>
-
         <nav>
+            <!-- Menú de navegación con enlaces a otras secciones del sitio -->
             <ul>
                 <li><a href="{{ url_for('home') }}">Inicio</a></li>
                 <li><a href="{{ url_for('electricos') }}">Electricos</a></li>
@@ -22,24 +27,67 @@
                 <li><a href="{{ url_for('e_fuel') }}">E-fuel</a></li>
             </ul>
         </nav>
-
         <div class="nav-cta">
+            <!-- Botón de llamada a la acción para contacto -->
             <a href="#contacto" class="cta-button">Contacto</a>
         </div>
     </header>
-    <main>
-        <section>
 
+    <!-- Contenido principal del sitio -->
+    <main>
+        <!-- Sección del formulario de comparación de vehículos -->
+        <section>
+            <h2>Formulario de Comparación de Vehículos</h2>
+            <form id="compararFormulario">
+                <!-- Campos para datos personales -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Selección de tipos de vehículos a comparar -->
+                <label for="vehiculo1">Vehículo 1:</label>
+                <select id="vehiculo1" name="vehiculo1" required>
+                    <option value="Electrico">Eléctrico</option>
+                    <option value="Hibrido">Híbrido</option>
+                    <option value="Combustion">Combustión</option>
+                    <option value="E-fuel">E-fuel</option>
+                </select>
+
+                <label for="vehiculo2">Vehículo 2:</label>
+                <select id="vehiculo2" name="vehiculo2" required>
+                    <option value="Electrico">Eléctrico</option>
+                    <option value="Hibrido">Híbrido</option>
+                    <option value="Combustion">Combustión</option>
+                    <option value="E-fuel">E-fuel</option>
+                </select>
+
+                <!-- Campo para kilometraje diario -->
+                <label for="kilometraje">Kilometraje diario (km):</label>
+                <input type="number" id="kilometraje" name="kilometraje" required>
+
+                <!-- Campo para gasto mensual en combustible -->
+                <label for="gastoCombustible">Gasto mensual en combustible (COP):</label>
+                <input type="number" id="gastoCombustible" name="gastoCombustible" required>
+
+                <!-- Botón para enviar el formulario -->
+                <button type="submit" class="cta-button">Comparar</button>
+            </form>
+        </section>
+
+        <!-- Sección donde se mostrarán los resultados -->
+        <section id="resultado" class="datosComparativos">
+            <!-- Este espacio se actualizará dinámicamente con los datos comparativos -->
         </section>
     </main>
-    <article>
 
-    </article>
-    <aside>
-
-    </aside>
+    <!-- Pie de página del sitio -->
     <footer>
-        
+        <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Enlace al archivo JavaScript para control de interacción -->
+    <script src="{{ url_for('static', filename='JS/control.js') }}"></script>
 </body>
 </html>

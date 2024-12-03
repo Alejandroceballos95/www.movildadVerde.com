@@ -28,18 +28,58 @@
         </div>
     </header>
     <main>
-        <section>
+        <!-- Sección de introducción -->
+        <section id="intro-electricos" class="hero">
+            <div class="hero-content">
+                <h1>Vehículos Eléctricos</h1>
+                <p>
+                    Los vehículos eléctricos son fundamentales para una movilidad sostenible, utilizando motores eléctricos alimentados por baterías recargables para ofrecer una alternativa limpia y eficiente a los vehículos de combustión interna.
+                </p>
+            </div>
+        </section>
 
+        <!-- Sección de beneficios -->
+        <section id="beneficios-electricos" class="section">
+            <h2>Beneficios de los Vehículos Eléctricos</h2>
+            <ul>
+                <li><strong>Cero emisiones:</strong> No producen gases contaminantes durante su funcionamiento.</li>
+                <li><strong>Ahorro en costos:</strong> Menores costos de operación y mantenimiento en comparación con vehículos tradicionales.</li>
+                <li><strong>Eficiencia energética:</strong> Los motores eléctricos son más eficientes que los de combustión interna.</li>
+                <li><strong>Conducción silenciosa:</strong> Reducen la contaminación acústica en las ciudades.</li>
+            </ul>
+        </section>
+
+        <!-- Sección del gráfico -->
+        <section id="grafico-demanda-electricidad" class="section">
+            <h2>Cambio Interanual en la Demanda de Electricidad en Colombia (2019-2022)</h2>
+            <p>
+                El siguiente gráfico muestra las variaciones anuales en la demanda de electricidad en Colombia entre 2019 y 2022, reflejando factores como el crecimiento económico, cambios demográficos y políticas energéticas implementadas en el país.
+            </p>
+            <img class="grafico" src="{{ url_for('static', filename='images/cambio_demanda_electricidad_colombia.png') }}" alt="Gráfico de cambio en la demanda de electricidad en Colombia">
+        </section>
+        
+
+        <!-- Sección de desafíos -->
+        <section id="desafios-electricos" class="section">
+            <h2>Desafíos de los Vehículos Eléctricos</h2>
+            <ul>
+                <li><strong>Autonomía limitada:</strong> Aunque mejora con cada generación, aún puede ser un desafío en trayectos largos.</li>
+                <li><strong>Infraestructura de carga:</strong> La red de estaciones de carga aún está en desarrollo en muchas regiones.</li>
+                <li><strong>Costo inicial:</strong> Las baterías encarecen el precio de los vehículos eléctricos.</li>
+                <li><strong>Impacto ambiental de las baterías:</strong> Su fabricación y disposición final requieren soluciones sostenibles.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de datos curiosos -->
+        <section id="datos-curiosos-electricos" class="aside">
+            <h3>¿Sabías qué?</h3>
+            <p>
+                Los vehículos eléctricos convierten aproximadamente el 60% de la energía de la batería en movimiento, mientras que los motores de combustión solo logran entre un 20% y 30%.
+            </p>
         </section>
     </main>
-    <article>
-
-    </article>
-    <aside>
-
-    </aside>
     <footer>
-        
+        <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
