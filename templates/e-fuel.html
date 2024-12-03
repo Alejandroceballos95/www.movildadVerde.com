@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-fuel</title>
-    <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
 <body>
-    <!-- Solo se plasmo la estructura semantica -->
     <header class="navbar">
         <div class="logo">
             <a href="#">Movilidad Verde</a>
@@ -17,8 +15,8 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                <li><a href="{{ url_for('electricos') }}">Electricos</a></li>
-                <li><a href="{{ url_for('hibridos') }}">Hibridos</a></li>
+                <li><a href="{{ url_for('electricos') }}">Eléctricos</a></li>
+                <li><a href="{{ url_for('hibridos') }}">Híbridos</a></li>
                 <li><a href="{{ url_for('datos_comparativos') }}">Datos comparativos</a></li>
             </ul>
         </nav>
@@ -27,19 +25,38 @@
             <a href="#contacto" class="cta-button">Contacto</a>
         </div>
     </header>
+    
     <main>
-        <section>
-
+        <section class="cards-container">
+            <div class="card">
+                <h3>¿Qué es el E-fuel?</h3>
+                <p>Los e-fuels son combustibles sintéticos producidos a partir de energía renovable, agua y dióxido de carbono capturado.</p>
+            </div>
+            <div class="card">
+                <h3>¿Cómo se crean?</h3>
+                <p>Se generan mediante electrólisis para dividir el agua en hidrógeno y oxígeno, y luego se combina el hidrógeno con CO₂ para formar hidrocarburos líquidos.</p>
+            </div>
+            <div class="card">
+                <h3>¿Quién lo está desarrollando?</h3>
+                <p>Empresas como Porsche, Siemens y ExxonMobil lideran investigaciones y producción de e-fuels a nivel global.</p>
+            </div>
+            <div class="card">
+                <h3>Beneficios de implementar</h3>
+                <p>Reducción de emisiones de carbono, compatibilidad con motores de combustión actuales y menor dependencia de combustibles fósiles.</p>
+            </div>
+            <div class="card">
+                <h3>Costos</h3>
+                <p>Actualmente altos, pero se espera que disminuyan con el avance de tecnologías y economías de escala.</p>
+            </div>
+            <div class="card">
+                <h3>Retos</h3>
+                <p>Altos costos iniciales, necesidad de infraestructura adecuada y políticas regulatorias que favorezcan su adopción.</p>
+            </div>
         </section>
     </main>
-    <article>
-
-    </article>
-    <aside>
-
-    </aside>
+    
     <footer>
-        
+        <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
