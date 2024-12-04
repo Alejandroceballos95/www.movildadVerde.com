@@ -1,7 +1,9 @@
 from flask import Flask, render_template, send_from_directory, request, jsonify
 import json
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 import os
 
 # Inicialización de la aplicación Flask
@@ -82,91 +84,86 @@ def static_files(path):
     return send_from_directory('static', path)
 
 # Ruta para guardar experiencias enviadas por los usuarios
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Directorio base de la aplicación
+JSON_FILE_PATH = os.path.join(BASE_DIR, 'experiencias.json')
+
 @app.route('/guardar_experiencia', methods=['POST'])
 def guardar_experiencia():
-    """
-    Recibe los datos enviados desde un formulario, los guarda en un archivo JSON y genera un gráfico
-    de barras basado en las evaluaciones.
-
-    Returns:
-        str: HTML de la página opinion.html.
-    """
-    # Recoger los datos enviados por el formulario
     experiencia = {
-        "vehiculo": request.form['vehiculo'],  # Tipo de vehículo evaluado
-        "satisfaccion": int(request.form['satisfaccion']),  # Calificación de satisfacción (1-5)
-        "rendimiento": int(request.form['rendimiento']),  # Calificación de rendimiento (1-5)
-        "ahorro": int(request.form['ahorro']),  # Calificación de ahorro (1-5)
-        "usabilidad": int(request.form['usabilidad']),  # Calificación de usabilidad (1-5)
-        "historia": request.form['historia']  # Breve descripción de la experiencia
+        "vehiculo": request.form['vehiculo'],
+        "satisfaccion": int(request.form['satisfaccion']),
+        "rendimiento": int(request.form['rendimiento']),
+        "ahorro": int(request.form['ahorro']),
+        "usabilidad": int(request.form['usabilidad']),
+        "historia": request.form['historia']
     }
 
-    # Cargar experiencias existentes desde un archivo JSON, si existe
-    if os.path.exists('experiencias.json'):
-        with open('experiencias.json', 'r') as f:
+    # Cargar datos existentes en el archivo JSON
+    if os.path.exists(JSON_FILE_PATH):
+        with open(JSON_FILE_PATH, 'r') as f:
             experiencias = json.load(f)
     else:
-        experiencias = []  # Crear una lista vacía si el archivo no existe
+        experiencias = []
 
-    # Agregar la nueva experiencia a la lista
+    # Agregar la nueva experiencia
     experiencias.append(experiencia)
 
-    # Guardar las experiencias actualizadas en el archivo JSON
-    with open('experiencias.json', 'w') as f:
-        json.dump(experiencias, f, indent=4)  # Sobrescribe el archivo con el nuevo contenido
+    # Guardar datos actualizados
+    with open(JSON_FILE_PATH, 'w') as f:
+        json.dump(experiencias, f, indent=4)
 
-    # Generar un gráfico basado en las nuevas experiencias
+    # Generar gráfico con los nuevos datos
     generar_grafico(experiencias)
 
-    # Renderizar la página de opiniones
     return render_template('opinion.html')
 
 # Función auxiliar para generar gráficos a partir de las experiencias
 def generar_grafico(experiencias):
     """
-    Genera un gráfico de barras basado en las evaluaciones de satisfacción, rendimiento,
-    ahorro y usabilidad de las experiencias guardadas.
-
+    Genera gráficos de barras independientes para satisfacción, rendimiento, ahorro y usabilidad.
+    
     Args:
         experiencias (list): Lista de experiencias extraídas de un archivo JSON.
     """
-    # Inicializar contadores para calificaciones de cada categoría (1-5)
-    satisfaccion = [0] * 5
-    rendimiento = [0] * 5
-    ahorro = [0] * 5
-    usabilidad = [0] * 5
+    # Inicializar contadores de calificaciones (1-5) para cada categoría
+    categorias = {
+        "Satisfacción": [0] * 5,
+        "Rendimiento": [0] * 5,
+        "Ahorro": [0] * 5,
+        "Usabilidad": [0] *5
+    }
 
     # Contar las calificaciones en cada categoría
     for experiencia in experiencias:
-        satisfaccion[experiencia['satisfaccion'] - 1] += 1
-        rendimiento[experiencia['rendimiento'] - 1] += 1
-        ahorro[experiencia['ahorro'] - 1] += 1
-        usabilidad[experiencia['usabilidad'] - 1] += 1
+        categorias["Satisfacción"][experiencia['satisfaccion'] - 1] += 1
+        categorias["Rendimiento"][experiencia['rendimiento'] - 1] += 1
+        categorias["Ahorro"][experiencia['ahorro'] - 1] += 1
+        categorias["Usabilidad"][experiencia['usabilidad'] - 1] += 1
 
-    # Configuración de categorías y datos
-    categories = ['Satisfacción', 'Rendimiento', 'Ahorro', 'Usabilidad']
-    data = [satisfaccion, rendimiento, ahorro, usabilidad]
+    # Ruta base para guardar gráficos
+    graph_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'images')
+    if not os.path.exists(graph_dir):
+        os.makedirs(graph_dir)  # Crear la carpeta si no existe
 
-    # Configuración del gráfico
-    fig, ax = plt.subplots(figsize=(8, 6))  # Crear la figura y el eje
-    width = 0.2  # Ancho de las barras
-    x = np.arange(5)  # Posiciones de las barras (1 a 5)
+    # Generar gráficos independientes
+    for categoria, datos in categorias.items():
+        fig, ax = plt.subplots(figsize=(8, 6))  # Crear figura para cada gráfico
+        x = np.arange(1, 6)  # Calificaciones de 1 a 5
 
-    # Dibujar barras para cada categoría
-    for i, category in enumerate(categories):
-        ax.bar(x + i * width, data[i], width, label=category)
+        # Crear gráfico de barras
+        ax.bar(x, datos, color='skyblue', edgecolor='black')
 
-    # Etiquetas y título del gráfico
-    ax.set_xlabel('Calificación (1-5)')
-    ax.set_ylabel('Número de respuestas')
-    ax.set_title('Evaluación de vehículos')
-    ax.set_xticks(x + 1.5 * width)
-    ax.set_xticklabels([1, 2, 3, 4, 5])
-    ax.legend()
+        # Etiquetas y título del gráfico
+        ax.set_title(f'Evaluación de {categoria}')
+        ax.set_xlabel('Calificación (1-5)')
+        ax.set_ylabel('Número de respuestas')
+        ax.set_xticks(x)
+        ax.set_xticklabels([1, 2, 3, 4, 5])
 
-    # Guardar el gráfico como archivo PNG en el directorio estático
-    plt.savefig('static/images/grafico.png')
-    plt.close()  # Cierra la figura para liberar memoria
+        # Guardar el gráfico en un archivo PNG
+        graph_path = os.path.join(graph_dir, f'{categoria.lower()}.png')
+        plt.savefig(graph_path)
+        plt.close()  # Cerrar la figura para liberar memoria
 
 # Ejecutar la aplicación si el archivo se ejecuta directamente
 if __name__ == '__main__':

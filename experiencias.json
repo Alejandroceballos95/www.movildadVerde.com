@@ -14,5 +14,45 @@
         "ahorro": 2,
         "usabilidad": 1,
         "historia": "Tuve algunas fallas con mi auto"
+    },
+    {
+        "vehiculo": "E-fuel",
+        "satisfaccion": 5,
+        "rendimiento": 5,
+        "ahorro": 5,
+        "usabilidad": 5,
+        "historia": "Tengo muchas expectativas con los combustibles"
+    },
+    {
+        "vehiculo": "E-fuel",
+        "satisfaccion": 5,
+        "rendimiento": 5,
+        "ahorro": 5,
+        "usabilidad": 5,
+        "historia": "Tengo muchas expectativas con los combustibles"
+    },
+    {
+        "vehiculo": "Combustion",
+        "satisfaccion": 5,
+        "rendimiento": 5,
+        "ahorro": 1,
+        "usabilidad": 3,
+        "historia": "Mi vehiculo es facil de usar pero gasta mucho"
+    },
+    {
+        "vehiculo": "Hibrido",
+        "satisfaccion": 2,
+        "rendimiento": 3,
+        "ahorro": 2,
+        "usabilidad": 4,
+        "historia": "Sin comentarios"
+    },
+    {
+        "vehiculo": "Hibrido",
+        "satisfaccion": 2,
+        "rendimiento": 3,
+        "ahorro": 2,
+        "usabilidad": 4,
+        "historia": "Sin comentarios"
     }
 ]
