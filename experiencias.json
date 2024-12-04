@@ -6,22 +6,13 @@
         "ahorro": 4,
         "usabilidad": 1,
         "historia": "."
-    }
-][
-    {
-        "vehiculo": "Hibrido",
-        "satisfaccion": 5,
-        "rendimiento": 3,
-        "ahorro": 4,
-        "usabilidad": 1,
-        "historia": "."
     },
     {
         "vehiculo": "Electrico",
         "satisfaccion": 4,
-        "rendimiento": 5,
-        "ahorro": 5,
-        "usabilidad": 5,
-        "historia": "Me fue muy bien con mi auto electrico a pesar de la deficiencia de puntos de carga"
+        "rendimiento": 3,
+        "ahorro": 2,
+        "usabilidad": 1,
+        "historia": "Tuve algunas fallas con mi auto"
     }
 ]
