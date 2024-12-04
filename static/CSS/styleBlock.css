@@ -20,6 +20,26 @@
     z-index: 1000; /* Aparece sobre otros elementos */
 }
 
+/* estilos de la barra de navegacion */
+
+.button-nav {
+    border-radius: 20%;  
+    background-color: #0073b1;
+    padding: 20%;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    border-color: #5b8c00;
+}
+
+.button-nav:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
 /* Logo en la barra de navegación */
 .logo a {
     font-size: 24px; /* Tamaño del texto */
