@@ -7,21 +7,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <a href="#">Movilidad Verde</a>
-        </div>
-         <!-- Menú de navegación -->
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                <li><a href="{{ url_for('electricos') }}">Eléctricos</a></li>
-                <li><a href="{{ url_for('hibridos') }}">Híbridos</a></li>
-                <li><a href="{{ url_for('e_fuel') }}">E-Fuel</a></li>
-                <li><a href="{{ url_for('datos_comparativos') }}">Datos comparativos</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- ===== Cabecera: Barra de navegación ===== -->
+        <header class="navbar">
+            <!-- Logo de la barra de navegación -->
+            <div class="logo">
+                <a href="#">Movilidad Verde</a>
+            </div>
+    
+            <!-- Menú de navegación -->
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('electricos') }}">Eléctricos</a></li>
+                    <li><a href="{{ url_for('hibridos') }}">Híbridos</a></li>
+                    <li><a href="{{ url_for('e_fuel') }}">E-Fuel</a></li>
+                    <li><a href="{{ url_for('datos_comparativos') }}">Datos comparativos</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Botón de llamada a la acción (Contacto) -->
+            <div class="nav-cta">
+                <a href="#contacto" class="cta-button">Contacto</a>
+            </div>
+        </header>
 
     <main>
         <section>
