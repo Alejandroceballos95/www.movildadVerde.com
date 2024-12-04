@@ -18,16 +18,15 @@
             <!-- Enlace a la página principal -->
             <a href="#">Movilidad Verde</a>
         </div>
-        <nav>
-            <!-- Menú de navegación con enlaces a otras secciones del sitio -->
-            <ul>
-                <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                <li><a href="{{ url_for('electricos') }}">Eléctricos</a></li>
-                <li><a href="{{ url_for('hibridos') }}">Híbridos</a></li>
-                <li><a href="{{ url_for('e_fuel') }}">E-Fuel</a></li>
-                <li><a href="{{ url_for('datos_comparativos') }}">Datos comparativos</a></li>
+        <nav class="navbarp">
+            <ul class="navbarp-list">
+                <li class="navbarp-item"><a href="{{ url_for('home') }}" class="navbarp-link">Inicio</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('electricos') }}" class="navbarp-link">Eléctricos</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('hibridos') }}" class="navbarp-link">Híbridos</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('e_fuel') }}" class="navbarp-link">E-Fuel</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('datos_comparativos') }}" class="navbarp-link">Datos comparativos</a></li>
             </ul>
-        </nav>
+        </nav>        
         <div class="nav-cta">
             <!-- Botón de llamada a la acción para contacto -->
             <a href="#contacto" class="cta-button">Contacto</a>
