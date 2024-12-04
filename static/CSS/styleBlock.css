@@ -225,7 +225,7 @@ footer a:hover {
 
 /* Estilo para las tarjetas */
 .card {
-    background: linear-gradient(to right, #3ce824, #71f542);
+    background: linear-gradient(to right, #7cb305, #a0d911);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -237,11 +237,13 @@ footer a:hover {
 .card h3 {
     margin-top: 0;
     font-size: 1.5em;
+    color: #fff;
 }
 
 .card p {
     font-size: 1em;
     line-height: 1.5;
+    color: #fff;
 }
 
 /* Hover para las tarjetas */
@@ -255,7 +257,57 @@ footer a:hover {
     .cards-container {
         grid-template-columns: 1fr;
     }
+    .gallery-container {
+        height: 180px; /* Altura menor para dispositivos más pequeños */
+    }
 }
+
+
+/*Galeria de fotos efuel */
+.photo-gallery {
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto 0; /* Agrega un margen superior  */
+    
+    
+}
+
+.photo-gallery h2 {
+    font-size: 20px; /* Reduce el tamaño del título */
+    margin-bottom: 15px;
+}
+
+.gallery-container img {
+    height: 100%; /* Ajusta la altura al contenedor */
+    width: auto; /* Mantiene la proporción de las imágenes */
+    object-fit: cover; /* Recorta las imágenes proporcionalmente para llenar el espacio */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.2s;
+}
+
+
+.gallery-container {
+    display: flex; /* Alinea las imágenes horizontalmente */
+    flex-wrap: wrap; /* Permite que las imágenes salten a la siguiente fila si es necesario */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Centra las imágenes verticalmente */
+    height: 240px; /* Fija la altura de la galería */
+    overflow: hidden; /* Oculta cualquier contenido que exceda la altura */
+    gap: 10px; /* Espaciado entre las imágenes */
+}
+
+
+.gallery-container img:hover {
+    transform: scale(1.1); /* Efecto de zoom suave al pasar el cursor */
+}
+
+/*Pie de pagina efuel */
+.pie {
+    margin-top: 50px;
+}
+
 
 
 /* Fondo semitransparente para el contenido de la hero */
