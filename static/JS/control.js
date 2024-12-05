@@ -27,5 +27,6 @@ document.getElementById("compararFormulario").addEventListener("submit", functio
     resultado=alert(
         `Resultado Comparativo
         ${nombre} estos son tus resultados
-        Si pasas de ${vehiculo1} a ${vehiculo2} Gastaras mensualmente  $${Math.abs(diferencia + gastoCombustible)}`);
+        Si pasas de ${vehiculo1} a ${vehiculo2} 
+        Gastaras mensualmente  $${Math.abs(diferencia + gastoCombustible)}`);
 });
