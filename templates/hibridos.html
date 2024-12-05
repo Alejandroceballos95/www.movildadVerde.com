@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehiculos Hibridos</title>
+    <title>Vehiculos Electricos</title>
     <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styleBlock.css') }}">
 </head>
@@ -14,32 +14,62 @@
             <a href="#">Movilidad Verde</a>
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                <li><a href="{{ url_for('electricos') }}">Electricos</a></li>
-                <li><a href="{{ url_for('e_fuel') }}">E-Fuel</a></li>
-                <li><a href="{{ url_for('datos_comparativos') }}">Datos comparativos</a></li>
+        <nav class="navbarp">
+            <ul class="navbarp-list">
+                <li class="navbarp-item"><a href="{{ url_for('home') }}" class="navbarp-link">Inicio</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('electricos') }}" class="navbarp-link">Eléctricos</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('hibridos') }}" class="navbarp-link">Híbridos</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('e_fuel') }}" class="navbarp-link">E-Fuel</a></li>
+                <li class="navbarp-item"><a href="{{ url_for('datos_comparativos') }}" class="navbarp-link">Datos comparativos</a></li>
             </ul>
-        </nav>
+        </nav>        
 
         <div class="nav-cta">
             <a href="#contacto" class="cta-button">Contacto</a>
         </div>
     </header>
     <main>
-        <section>
+        <!-- Sección de introducción -->
+        <section id="intro-electricos" class="hero">
+            <div class="hero-content">
+                <h1>Vehículos Híbridos</h1>
+                <p>
+                    Un motor híbrido funciona combinando un motor de combustión interna con un motor eléctrico y una batería recargable. El sistema híbrido de un vehículo controla las dos fuentes de energía para funcionar de manera eficiente en cualquier condición de conducción.
+                </p>
+            </div>
+        </section>
 
+        <!-- Sección de beneficios -->
+        <section id="beneficios-electricos" class="section">
+            <h2>Beneficios de los Vehículos Híbridos</h2>
+            <ul>
+                <li><strong>Menor consumo de combustible:</strong> Los coches híbridos combinan energía eléctrica y combustible, lo que reduce el consumo de combustible hasta en 30 veces.</li>
+                <li><strong>Menor contaminación:</strong> Los coches híbridos emiten menos gases y son más sostenibles que los de combustión.</li>
+                <li><strong>Menor restricciones de movilidad:</strong> En algunas ciudades, los coches híbridos pueden estar exentos de restricciones como el pico y placa o el día sin carro.</li>
+                <li><strong>Conducción silenciosa:</strong> Reducen la contaminación acústica en las ciudades.</li>
+            </ul>
+        </section>
+
+        <!-- Sección del tipos de motores -->
+        <section id="desafios-electricos" class="section">
+            <h2>Los vehículos híbridos vienen equipados con dos tipos diferentes de motores</h2>
+            <ul>
+                <li><strong>MHEV:</strong> Es un motor eléctrico que se utiliza para complementar un motor de gasolina o diésel. Los MHEV son también conocidos como híbridos ligeros, microhíbridos o híbridos de 12, 24, o 48V.</li>
+                <li><strong>PHEV:</strong> Es un motor de un vehículo híbrido enchufable (Plug-in Hybrid Electric Vehicle), que combina un motor de combustión interna con un motor eléctrico y una batería recargable.</li>
+            </ul>
+        </section>
+        
+        <!-- Sección de tipo de funcionamiento-->
+        <section id="desafios-electricos" class="section">
+            <h2>El funcionamiento de cada tipo de motor es similar</h2>
+            <ul>
+                <li><strong>MHEV:</strong> Los MHEV tienen un nivel de electrificación bajo y utilizan un motor eléctrico pequeño para ayudar al motor de combustión en situaciones específicas, como al arrancar, en pendientes o en inercia. También utilizan el frenado regenerativo para cargar la batería mientras se conduce.</li>
+                <li><strong>PHEV:</strong> Los motores de un PHEV pueden funcionar de forma individual o conjunta, el motor eléctrico se utiliza para conducir en distancias cortas, de forma silenciosa y sin emisiones. Mientras que el motor de combustión interna se utiliza para viajes más largos, proporcionando una mayor autonomía</li>
+            </ul>
         </section>
     </main>
-    <article>
-
-    </article>
-    <aside>
-
-    </aside>
     <footer>
-        
+        <p>&copy; 2024 Movilidad Verde. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
