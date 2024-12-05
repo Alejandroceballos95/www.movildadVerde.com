@@ -181,6 +181,7 @@ section ul {
     list-style: disc; /* Viñetas estándar */
     margin-left: 20px; /* Sangría a la izquierda */
     padding-left: 10px; /* Espaciado interno */
+    font-size: 20px;
 }
 
 /* ===== Sección de datos comparativos ===== */
