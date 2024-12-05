@@ -44,25 +44,48 @@
                 </select>
 
                 <label for="satisfaccion">Satisfacción general (1-5):</label>
-                <input type="number" id="satisfaccion" name="satisfaccion" min="1" max="5" required>
+                <select id="satisfaccion" name="satisfaccion" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
 
                 <label for="rendimiento">Rendimiento (1-5):</label>
-                <input type="number" id="rendimiento" name="rendimiento" min="1" max="5" required>
+                <select id="rendimiento" name="rendimiento" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
 
                 <label for="ahorro">Ahorro (1-5):</label>
-                <input type="number" id="ahorro" name="ahorro" min="1" max="5" required>
+                <select id="ahorro" name="ahorro" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
 
                 <label for="usabilidad">Usabilidad (1-5):</label>
-                <input type="number" id="usabilidad" name="usabilidad" min="1" max="5" required>
-
+                <select id="usabilidad" name="usabilidad" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
                 <label for="historia">Experiencia con el vehiculo:</label>
-                <textarea id="historia" name="historia" rows="4" required></textarea>
+                <input type="text" id="historia" name="historia" required>
 
                 <button type="submit" class="cta-button">Enviar experiencia</button>
             </form>
         </section>
 
-        <section id="grafico">
+        <section>
             <div id="graficos">
                 <h2>Gráficos de Evaluaciones</h2>
                 <img src="/static/images/satisfaccion.png" alt="Gráfico de Satisfacción">

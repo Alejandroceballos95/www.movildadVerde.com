@@ -127,7 +127,7 @@ def generar_grafico(experiencias):
     """
     # Inicializar contadores de calificaciones (1-5) para cada categoría
     categorias = {
-        "Satisfacción": [0] * 5,
+        "Satisfaccion": [0] * 5,
         "Rendimiento": [0] * 5,
         "Ahorro": [0] * 5,
         "Usabilidad": [0] *5
@@ -135,7 +135,7 @@ def generar_grafico(experiencias):
 
     # Contar las calificaciones en cada categoría
     for experiencia in experiencias:
-        categorias["Satisfacción"][experiencia['satisfaccion'] - 1] += 1
+        categorias["Satisfaccion"][experiencia['satisfaccion'] - 1] += 1
         categorias["Rendimiento"][experiencia['rendimiento'] - 1] += 1
         categorias["Ahorro"][experiencia['ahorro'] - 1] += 1
         categorias["Usabilidad"][experiencia['usabilidad'] - 1] += 1
@@ -151,7 +151,14 @@ def generar_grafico(experiencias):
         x = np.arange(1, 6)  # Calificaciones de 1 a 5
 
         # Crear gráfico de barras
-        ax.bar(x, datos, color='skyblue', edgecolor='black')
+        if (categoria == "Satisfaccion"):
+            ax.bar(x, datos, color='skyblue', edgecolor='black')
+        elif (categoria == "Rendimiento"):
+            ax.bar(x, datos, color='salmon', edgecolor='black')
+        elif (categoria == "Ahorro"):
+            ax.bar(x, datos, color='plum', edgecolor='black')
+        elif (categoria == "Usabilidad"):
+            ax.bar(x, datos, color='palegreen', edgecolor='black')
 
         # Etiquetas y título del gráfico
         ax.set_title(f'Evaluación de {categoria}')

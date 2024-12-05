@@ -59,7 +59,7 @@
     transform: translateY(-2px); /* Eleva ligeramente el botón */
 }
 
-.navbarp-link:active {
+navbarp-link:active {
     transform: translateY(0); /* Elimina la elevación al hacer clic */
     background-color: #003f7f; /* Azul aún más oscuro */
 }
@@ -426,7 +426,6 @@ section, aside {
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mejorar la estética */
 }
-
 /* Estilo para los formularios */
 form {
     background-color: #ffffff;
@@ -461,4 +460,3 @@ form button.cta-button {
 form button.cta-button:hover {
     background-color: #005582;
 }
-
