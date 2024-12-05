@@ -167,12 +167,12 @@ section {
 section h2 {
     color: #0073b1; /* Color azul */
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 /* Estilo de los párrafos en las secciones */
 section p {
-    font-size: 16px;
+    font-size: 20px;
     text-align: justify; /* Alinear texto a ambos lados */
 }
 
