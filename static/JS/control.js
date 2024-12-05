@@ -23,24 +23,9 @@ document.getElementById("compararFormulario").addEventListener("submit", functio
     // Diferencia de costos
     const diferencia = costo2 - costo1;
 
-    // Determinar si se gasta más o menos
-    let mensaje;
-    if (diferencia > 0) 
-    {
-        mensaje = `Si pasas de ${vehiculo1} a ${vehiculo2} Gastarás $${diferencia} COP más.`;
-    } 
-    else 
-    {
-        mensaje = `Si pasas de ${vehiculo1} a ${vehiculo2} Ahorrarás $${Math.abs(diferencia)} COP menos.`;
-    }
-
-
     // Mostrar resultados
-    const resultado = document.getElementById("resultado");
-    resultado.innerHTML = 
-        `<h2>Resultado Comparativo</h2>
-        <p><strong> ${nombre} </strong> estos son tus resultados</p>
-        <p><strong>Vehículo 1:</strong> ${vehiculo1}</p>
-        <p><strong>Vehículo 2:</strong> ${vehiculo2}</p>
-        <p><strong>Ahorro:</strong> ${mensaje}</p>`;
+    resultado=alert(
+        `Resultado Comparativo
+        ${nombre} estos son tus resultados
+        Si pasas de ${vehiculo1} a ${vehiculo2} Gastaras mensualmente  $${Math.abs(diferencia + gastoCombustible)}`);
 });
